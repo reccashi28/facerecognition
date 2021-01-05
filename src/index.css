@@ -5,9 +5,17 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: rgb(238,174,174);
+  background: -moz-radial-gradient(circle, rgba(238,174,174,1) 74%, rgba(250,254,255,1) 100%);
+  background: -webkit-radial-gradient(circle, rgba(238,174,174,1) 74%, rgba(250,254,255,1) 100%);
+  background: radial-gradient(circle, rgba(238,174,174,1) 74%, rgba(250,254,255,1) 100%);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+button {
+  cursor: pointer;
 }
