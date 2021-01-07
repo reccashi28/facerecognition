@@ -5,10 +5,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: rgb(238,174,174);
+  background: rgb(100,184,255);
+  background: -moz-linear-gradient(90deg, rgba(100,184,255,1) 40%, rgba(76,106,190,1) 99%);
+  background: -webkit-linear-gradient(90deg, rgba(100,184,255,1) 40%, rgba(76,106,190,1) 99%);
+  background: linear-gradient(90deg, rgba(100,184,255,1) 40%, rgba(76,106,190,1) 99%);
+  /* background: rgb(238,174,174);
   background: -moz-radial-gradient(circle, rgba(238,174,174,1) 74%, rgba(250,254,255,1) 100%);
   background: -webkit-radial-gradient(circle, rgba(238,174,174,1) 74%, rgba(250,254,255,1) 100%);
-  background: radial-gradient(circle, rgba(238,174,174,1) 74%, rgba(250,254,255,1) 100%);
+  background: radial-gradient(circle, rgba(238,174,174,1) 74%, rgba(250,254,255,1) 100%); */
 }
 
 code {
