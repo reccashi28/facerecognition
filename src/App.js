@@ -18,17 +18,25 @@ const particlesOptions = {
     line_linked: {
       color: '#dce0e3'
     }
-    // line_linked: {
-    //   shadow: {
-    //     enable: true,
-    //     color: "#3CA9D1",
-    //     blur: 5
-    //   }
-    // }
   }
-};
+}
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      input: '',
+    }
+  }
+
+  onInputChange = (e) => {
+    console.log(e.target.value);
+  }
+
+  onButtonSubmit = () => {
+    console.log('click');
+  }
+
 render() {
   return (
     <div className="App" style={{padding: 50}}>
@@ -36,7 +44,9 @@ render() {
       <Navigation />
       <Logo />
       <Rank />
-      <ImageLinkForm />
+      <ImageLinkForm 
+        onInputChange ={this.onInputChange}
+        onButtonSubmit={this.onButtonSubmit} />
       {/* <FaceRecognition /> */}
     </div>
   );
