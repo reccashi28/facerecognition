@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import Clarifai from 'clarifai';
 import Navigation from './component/Navigation/Navigation';
+import Signin from './component/Signin/Signin';
 import FaceRecognition from './component/FaceRecognition/FaceRecognition';
 import Logo from './component/Logo/Logo';
 import ImageLinkForm from './component/ImageLinkForm/ImageLinkForm';
@@ -34,6 +35,7 @@ class App extends Component {
       input: '',
       imageUrl: '',
       box: '',
+      route: 'signin'
     }
   }
 
@@ -70,17 +72,24 @@ class App extends Component {
       );
   }
 
+  onRouteChange = (route) => {
+    this.setState({route: route});
+  }
+
 render() {
   return (
     <div className="App" style={{padding: 50}}>
       <Particles className="particles" params={particlesOptions} />
-      <Navigation />
-      <Logo />
-      <Rank />
-      <ImageLinkForm 
-        onInputChange ={this.onInputChange}
-        onButtonSubmit={this.onButtonSubmit} />
-      <FaceRecognition box = {this.state.box} imageUrl={this.state.imageUrl}/>
+      <Navigation onRouteChange={this.onRouteChange} />
+      { this.state.route === 'signin' ?  <Signin onRouteChange={this.onRouteChange}/> : <div> 
+          <Logo />
+          <Rank />
+          <ImageLinkForm 
+            onInputChange ={this.onInputChange}
+            onButtonSubmit={this.onButtonSubmit} />
+          <FaceRecognition box = {this.state.box} imageUrl={this.state.imageUrl}/>
+      </div>
+      }
     </div>
   );
 }
