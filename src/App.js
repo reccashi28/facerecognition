@@ -3,6 +3,7 @@ import './App.css';
 import Clarifai from 'clarifai';
 import Navigation from './component/Navigation/Navigation';
 import Signin from './component/Signin/Signin';
+import Register from './component/Register/Register';
 import FaceRecognition from './component/FaceRecognition/FaceRecognition';
 import Logo from './component/Logo/Logo';
 import ImageLinkForm from './component/ImageLinkForm/ImageLinkForm';
@@ -81,17 +82,22 @@ render() {
     <div className="App" style={{padding: 50}}>
       <Particles className="particles" params={particlesOptions} />
       <Navigation onRouteChange={this.onRouteChange} />
-      { this.state.route === 'signin' ?  <Signin onRouteChange={this.onRouteChange}/> : <div> 
+      { this.state.route === 'home' 
+        ? <div> 
           <Logo />
           <Rank />
           <ImageLinkForm 
             onInputChange ={this.onInputChange}
             onButtonSubmit={this.onButtonSubmit} />
           <FaceRecognition box = {this.state.box} imageUrl={this.state.imageUrl}/>
-      </div>
-      }
+        </div> 
+      : (this.state.route === 'signin' 
+      ? <Signin onRouteChange={this.onRouteChange} /> 
+      : <Register onRouteChange={this.onRouteChange} />
+      ) 
+    }
     </div>
-  );
+  )
 }
 }
 
