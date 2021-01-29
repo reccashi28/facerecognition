@@ -30,7 +30,7 @@ constructor(props) {
             .then( user => {
                 if( user.id) {
                     this.props.loadUser(user)
-                    this.props.onRouteChange('home');
+                    this.props.onRouteChange('home')
                 }
             })
     }
@@ -63,10 +63,10 @@ constructor(props) {
                         </fieldset>
                         <div className="">
                             <input 
-                            onClick={ this.onSubmitSignIn}
-                            className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f4 dib" 
-                            type="submit" 
-                            value="Sign in" /> 
+                                onClick={ this.onSubmitSignIn}
+                                className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f4 dib" 
+                                type="submit" 
+                                value="Sign in" /> 
                         </div>
                         <div className="lh-copy mt3">
                             <p onClick={ () => onRouteChange('register')} className="pointer f6 link dim black db">Register</p>
