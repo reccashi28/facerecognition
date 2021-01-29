@@ -29,8 +29,8 @@ constructor(props) {
             .then( response => response.json())
             .then( user => {
                 if( user.id) {
-                    this.props.loadUser(user)
-                    this.props.onRouteChange('home')
+                    this.props.loadUser(user);
+                    this.props.onRouteChange('home');
                 }
             })
     }
@@ -74,7 +74,7 @@ constructor(props) {
                     </div>
                 </main>
             </article>
-            );
+        );
     }
     
 }
