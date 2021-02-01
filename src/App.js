@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './App.css';
-import Clarifai from 'clarifai';
 import Navigation from './component/Navigation/Navigation';
 import Signin from './component/Signin/Signin';
 import Register from './component/Register/Register';
@@ -104,7 +103,7 @@ class App extends Component {
           }
         this.displayFaceBox(this.calculateFaceLocation(response))
       })
-      .catch( err => console.log(err));
+      .catch( err => console.log(err))
   }
 
   onRouteChange = (route) => {
@@ -134,7 +133,7 @@ class App extends Component {
                   onInputChange ={this.onInputChange}
                   onButtonSubmit={this.onButtonSubmit} 
                 />
-                <FaceRecognition box = {box} imageUrl={imageUrl}/>
+                <FaceRecognition box = {box} imageUrl={imageUrl} />
               </div> 
             : (
               route === 'signin' 
